@@ -15,7 +15,7 @@ public class WalkAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis ("Horizontal") > 0 || Input.GetAxis ("Horizontal") < 0){
+        if (Input.GetAxis ("Horizontal") > 0 || Input.GetAxis ("Horizontal") < 0 || Input.GetAxis ("Vertical") > 0 || Input.GetAxis ("Vertical") < 0){
             anim.enabled = true;
         } else {
             anim.enabled = false;

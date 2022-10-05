@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1079933281808468888, guid: e8c23ac26ac194ecd8d1a5b3838e8c77, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3255965411311400093, guid: e8c23ac26ac194ecd8d1a5b3838e8c77, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -498,6 +502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: standingPatient
       objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454028, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5697907134467454029, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -540,6 +548,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5697907134467454029, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454030, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454031, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.9578116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454031, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6701834
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454031, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.042491585
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454031, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.2599821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5697907134467454031, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
