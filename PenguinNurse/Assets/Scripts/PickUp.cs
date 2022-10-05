@@ -32,7 +32,7 @@ public class PickUp : MonoBehaviour
 
 
             } else {    /* If player is not currently holding an item, pick the item up */
-                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .4f, pickUpMask);   /* pickUpMask will only allow player to get item that can be picked up */
+                Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .8f, pickUpMask);   /* pickUpMask will only allow player to get item that can be picked up */
 
                 if (pickUpItem) {   /* If there's an item that can be picked up */
                     itemHolding = pickUpItem.gameObject;    /* store game object into itemHolding */
