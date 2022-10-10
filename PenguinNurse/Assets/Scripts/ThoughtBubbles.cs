@@ -6,15 +6,21 @@ public class ThoughtBubbles : MonoBehaviour
 {
     public GameObject[] needs;
     // Start is called before the first frame update
-    private GameObject[] icons = new GameObject[10];
+    private GameObject[] icons = new GameObject[3];
     void Start()
     {
-        icons[0] = Instantiate(needs[0], new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 1), Quaternion.identity);
+        for (int i = 0; i < needs.Length; i++) {
+            icons[i] = Instantiate(needs[i], new Vector2(gameObject.transform.position.x - 1 + i, gameObject.transform.position.y + 1), Quaternion.identity);
+        }
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        icons[0].transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 1);
+        for (int i = 0; i < needs.Length; i++) {
+            icons[i].transform.position = new Vector2(gameObject.transform.position.x - 1 + i, gameObject.transform.position.y + 1);
+        }
+        
     }
 }
