@@ -12,6 +12,8 @@ public class PickUp : MonoBehaviour
 
     public Vector3 Direction {get; set; }  /* Pick Up Logic: Need to know which direction the nurse penguin is facing. Get from movement scipt */
 
+    public GameObject place;
+
     void Update()
     {
 
@@ -19,8 +21,13 @@ public class PickUp : MonoBehaviour
 
             if (itemHolding) {  /* If player is currently holding item, drop the item */
 
-                itemHolding.transform.position = transform.position + Direction;     /* Change the positon of the item so that when the item is drop, it dropped right infront of the player */
-                itemHolding.transform.parent = null;   /* Get the item off the player head */
+                if (Vector3.Distance (place.transform.position, transform.position) < 1.5) { /* If player is near a place (bed/stool), drop the item on the place */
+                    itemHolding.transform.position = place.transform.position;
+                    itemHolding.transform.parent = place.transform;
+                } else {
+                    itemHolding.transform.position = transform.position + Direction;     /* Change the positon of the item so that when the item is drop, it dropped right infront of the player */
+                    itemHolding.transform.parent = null;   /* Get the item off the player head */
+                }
 
                 if (itemHolding.GetComponent<Rigidbody2D>()) {
                     itemHolding.GetComponent<Rigidbody2D>().simulated = true;  /* Check to make sure that the object stop following the player */

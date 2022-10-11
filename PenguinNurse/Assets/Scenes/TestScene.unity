@@ -288,6 +288,7 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 64
+  place: {fileID: 974821125}
 --- !u!212 &541593875
 SpriteRenderer:
   m_ObjectHideFlags: 0
