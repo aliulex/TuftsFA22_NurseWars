@@ -1521,6 +1521,7 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 128
+  babyPenguin: {fileID: 1871407074}
 --- !u!1 &574544391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9022723170273557515, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
@@ -1913,6 +1914,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2208901951135135084, guid: cf6d0fdad9e7243dd91dd01e1e5d1fed, type: 3}
   m_PrefabInstance: {fileID: 954501196767885244}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1871407074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5728259346758313286, guid: 9f4f4001fb3f74ea592452ba38370b09, type: 3}
+  m_PrefabInstance: {fileID: 2170883433835315448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1933199709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1976483288160884495, guid: 7e159598cfcd94cfbb89890a6adb7cec, type: 3}
@@ -1963,6 +1969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 1583559274}
   iceLocation: {fileID: 2063420747}
+  penguin: {fileID: 541593869}
+  ice: {fileID: 574544391}
 --- !u!1 &2063420746
 GameObject:
   m_ObjectHideFlags: 0
