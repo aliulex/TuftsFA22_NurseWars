@@ -1963,8 +1963,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objToSpawn: {fileID: 1583559274}
   iceLocation: {fileID: 2063420747}
-  timeLeft: 5
-  originalTime: 5
 --- !u!1 &2063420746
 GameObject:
   m_ObjectHideFlags: 0

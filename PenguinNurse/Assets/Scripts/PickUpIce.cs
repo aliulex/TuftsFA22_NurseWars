@@ -9,12 +9,14 @@ public class PickUpIce : MonoBehaviour
 
     private GameObject itemHolding;     /* Having private means when we have it pick up, we store it in this variable. When we want to drop it, we can just access this variable again */ 
 
+    public GameObject babyPenguin;
+
     public Vector3 Direction {get; set; }  /* Pick Up Logic: Need to know which direction the nurse penguin is facing. Get from movement scipt */
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E)) {  /* Check for key input */
+        if (Input.GetKeyDown(KeyCode.T)) {  /* Check for key input */
 
             if (itemHolding) {  /* If player is currently holding item, drop the item */
 
@@ -22,10 +24,25 @@ public class PickUpIce : MonoBehaviour
                 itemHolding.transform.parent = null;   /* Get the item off the player head */
 
                 if (itemHolding.GetComponent<Rigidbody2D>()) {
+
+
                     itemHolding.GetComponent<Rigidbody2D>().simulated = true;  /* Check to make sure that the object stop following the player */
                 }
 
+
+
+                /********************** WHY IS THIS PART NOT WORKING
+                float distant_ice_from_baby_penguin = Vector3.Distance (babyPenguin.transform.position, itemHolding.transform.position);
+                if(distant_ice_from_baby_penguin <= 2) {
+                        itemHolding.SetActive(false);
+                }
+                ***********************/
+
+
+
                 itemHolding = null; /* Set to null because item is no longer being held */
+
+
 
 
 
