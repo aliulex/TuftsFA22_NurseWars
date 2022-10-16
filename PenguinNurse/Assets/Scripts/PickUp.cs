@@ -27,15 +27,19 @@ public class PickUp : MonoBehaviour
  
                 for (int i = 0; i < beds.Length; i++) {
                     if (Vector3.Distance(transform.position, beds[i].transform.position) <= 1.5) {
-                        place = beds[i];
-                        canplacebed = true;
+                        if (beds[i].transform.childCount == 0) {
+                            place = beds[i];
+                            canplacebed = true;
+                        }
                     }
                 }
 
                 for (int i = 0; i < stools.Length; i++) {
                     if (Vector3.Distance(transform.position, stools[i].transform.position) <= 1.5) {
-                        place = stools[i];
-                        canplacestool = true;
+                        if (stools[i].transform.childCount == 0) {
+                            place = stools[i];
+                            canplacestool = true;
+                        }
                     }
                 }
 
