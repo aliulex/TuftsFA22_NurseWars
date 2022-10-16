@@ -12,8 +12,6 @@ public class PickUp : MonoBehaviour
 
     public Vector3 Direction {get; set; }  /* Pick Up Logic: Need to know which direction the nurse penguin is facing. Get from movement scipt */
 
-    public GameObject place;
-
     void Update()
     {
 
@@ -21,8 +19,31 @@ public class PickUp : MonoBehaviour
 
             if (itemHolding) {  /* If player is currently holding item, drop the item */
 
-                if (Vector3.Distance (place.transform.position, transform.position) < 1.5) { /* If player is near a place (bed/stool), drop the item on the place */
-                    itemHolding.transform.position = place.transform.position;
+                GameObject[] beds = GameObject.FindGameObjectsWithTag("bed");
+                GameObject[] stools = GameObject.FindGameObjectsWithTag("stool");
+                GameObject place = null;
+                bool canplacebed = false;
+                bool canplacestool = false;
+ 
+                for (int i = 0; i < beds.Length; i++) {
+                    if (Vector3.Distance(transform.position, beds[i].transform.position) <= 1.5) {
+                        place = beds[i];
+                        canplacebed = true;
+                    }
+                }
+
+                for (int i = 0; i < stools.Length; i++) {
+                    if (Vector3.Distance(transform.position, stools[i].transform.position) <= 1.5) {
+                        place = stools[i];
+                        canplacestool = true;
+                    }
+                }
+
+                if (canplacebed) { /* If player is near a place (bed/stool), drop the item on the place */
+                    itemHolding.transform.position = place.transform.position + new Vector3(0, (float)0.25, 0);
+                    itemHolding.transform.parent = place.transform;
+                } else if (canplacestool) {
+                    itemHolding.transform.position = place.transform.position + new Vector3(0, (float)0.9, 0);
                     itemHolding.transform.parent = place.transform;
                 } else {
                     itemHolding.transform.position = transform.position + Direction;     /* Change the positon of the item so that when the item is drop, it dropped right infront of the player */
