@@ -6,6 +6,11 @@ TagManager:
   tags:
   - bed
   - stool
+  - patient
+  - needbandaid
+  - needbed
+  - needice
+  - needsaltine
   layers:
   - Default
   - TransparentFX

@@ -75,6 +75,8 @@ public class SpawnIce : MonoBehaviour
 
         public Vector3 Direction {get; set; }  /* Pick Up Logic: Need to know which direction the nurse penguin is facing. Get from movement scipt */
 
+        public GameObject bar;
+
         void Update()
         {
                 float distant_from_iceMachine = Vector3.Distance (penguin.transform.position, transform.position);  /* Get the position between the penguin and the ice-machine  */
@@ -94,9 +96,11 @@ public class SpawnIce : MonoBehaviour
 
         /* Wait a couple second before ice is spawned */
         IEnumerator DelayTreeAway(){
-                yield return new WaitForSeconds(2f);
+                GameObject progress = Instantiate(bar, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+                yield return new WaitForSeconds(5f);
 
                 spawnOnPress();
+                Destroy(progress);
 
         }
 

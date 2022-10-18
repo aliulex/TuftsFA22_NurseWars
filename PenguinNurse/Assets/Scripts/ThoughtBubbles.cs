@@ -7,6 +7,7 @@ public class ThoughtBubbles : MonoBehaviour
     public GameObject[] needs;
     // Start is called before the first frame update
     private GameObject[] icons = new GameObject[3];
+    public Sprite newSprite;
     void Start()
     {
         for (int i = 0; i < needs.Length; i++) {
@@ -22,5 +23,14 @@ public class ThoughtBubbles : MonoBehaviour
             icons[i].transform.position = new Vector2(gameObject.transform.position.x - 1 + i, gameObject.transform.position.y + 1);
         }
         
+    }
+
+    void Slept()
+    {
+        for (int i = 0; i < needs.Length; i++) {
+            if (icons[i].tag == "needbed") {
+                icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+            }
+        }
     }
 }
