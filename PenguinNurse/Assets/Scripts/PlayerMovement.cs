@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    public float speed = 3f; // player movement speed
+    public float speed = 6f; // player movement speed
     private Vector3 change; // player movement direction
     private Rigidbody2D rb2d;
     // Start is called before the first frame update
