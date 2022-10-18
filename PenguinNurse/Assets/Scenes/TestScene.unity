@@ -1834,6 +1834,7 @@ MonoBehaviour:
   pickUpMask:
     serializedVersion: 2
     m_Bits: 128
+  babyPenguin: {fileID: 1396825890}
 --- !u!1 &552848296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3758133065075063629, guid: 8ae17b562df154d1dbdb57b4be9b3063, type: 3}
@@ -2607,6 +2608,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 2}
   m_EdgeRadius: 0
+--- !u!1 &1396825890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5728259346758313286, guid: 9f4f4001fb3f74ea592452ba38370b09, type: 3}
+  m_PrefabInstance: {fileID: 2170883433835315448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1400977910
 GameObject:
   m_ObjectHideFlags: 0
