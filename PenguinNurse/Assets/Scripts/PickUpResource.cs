@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PickUpResource : MonoBehaviour
 {
@@ -24,8 +25,20 @@ public class PickUpResource : MonoBehaviour
 
                                 if (itemHolding) {  /* If player is currently holding item, drop the item */
 
+
+
                                         itemHolding.transform.position = transform.position + Direction;     /* Change the positon of the item so that when the item is drop, it dropped right infront of the player */
                                         itemHolding.transform.parent = null;   /* Get the item off the player head */
+
+
+                                        /********************** WHY IS THIS PART NOT WORKING */
+                                        // float distant_ice_from_baby_penguin = Vector3.Distance (babyPenguin.transform.position, itemHolding.transform.position);
+                                        // Console.Write(distant_ice_from_baby_penguin);
+                                        // if(distant_ice_from_baby_penguin <= 2) {
+                                        //         itemHolding.SetActive(false);
+                                        // }
+                                        /***********************/
+
 
                                         if (itemHolding.GetComponent<Rigidbody2D>()) {
 
@@ -35,23 +48,14 @@ public class PickUpResource : MonoBehaviour
 
 
 
-                                        /********************** WHY IS THIS PART NOT WORKING
-                                        float distant_ice_from_baby_penguin = Vector3.Distance (babyPenguin.transform.position, itemHolding.transform.position);
-                                        if(distant_ice_from_baby_penguin <= 2) {
-                                                itemHolding.SetActive(false);
-                                        }
-                                        ***********************/
-
-
 
                                         itemHolding = null; /* Set to null because item is no longer being held */
 
 
 
 
-
-
                                 } else {    /* If player is not currently holding an item, pick the item up */
+
                                         Collider2D pickUpItem = Physics2D.OverlapCircle(transform.position + Direction, .8f, pickUpMask);   /* pickUpMask will only allow player to get item that can be picked up */
 
                                         if (pickUpItem) {   /* If there's an item that can be picked up */

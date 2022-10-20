@@ -31,22 +31,23 @@ public class SpawnSaltine : MonoBehaviour
 
                         /* If "P" is pressed and the location of a spawned saltine is not at the spawn location. Essentially mean, only spawn saltine when a button is press and when there's no saltine at the spawn-saltine location */
                         if(Input.GetKeyDown(KeyCode.P) && saltineBlockLocation > 1) {
-                                StopCoroutine(DelayTreeAway());
-                                StartCoroutine(DelayTreeAway());
+                                // StopCoroutine(DelayTreeAway());
+                                // StartCoroutine(DelayTreeAway());
+                                spawnOnPress();
                         }
                 }
 
         }
 
-        /* Wait a couple second before saltine is spawned */
-        IEnumerator DelayTreeAway(){
-                GameObject progress = Instantiate(bar, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
-                yield return new WaitForSeconds(5f);
+        // /* Wait a couple second before saltine is spawned */
+        // IEnumerator DelayTreeAway(){
+        //         GameObject progress = Instantiate(bar, new Vector2(transform.position.x, transform.position.y + 0.5f), Quaternion.identity);
+        //         yield return new WaitForSeconds(5f);
 
-                spawnOnPress();
-                Destroy(progress);
+        //         spawnOnPress();
+        //         Destroy(progress);
 
-        }
+        // }
 
         /* Function to spawn an saltine */
         void spawnOnPress() {
