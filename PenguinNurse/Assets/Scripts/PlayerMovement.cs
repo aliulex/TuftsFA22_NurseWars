@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
     public float speed = 6f; // player movement speed
+	public AudioSource moveSFX; // walking sfx
     private Vector3 change; // player movement direction
     private Rigidbody2D rb2d;
     // Start is called before the first frame update
@@ -35,6 +36,9 @@ public class PlayerMovement : MonoBehaviour {
     void UpdateAnimationAndMove() {
         if (change != Vector3.zero) {
             rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
+			if (moveSFX.isPlaying == false){
+                        moveSFX.Play();
+                }
         }
     }
 }

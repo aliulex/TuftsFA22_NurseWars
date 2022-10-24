@@ -10,6 +10,7 @@ public class SpawnIce : MonoBehaviour
 
         public GameObject objToSpawn;   /* Game Object to Spawn */
 
+		public AudioSource iceSFX; /* ice spawn sfx */
 
         public Transform iceLocation;  /* Location where ice will be dispense */
 
@@ -53,6 +54,7 @@ public class SpawnIce : MonoBehaviour
 
                 /* For checking to make sure that ice doesn't get spawn if there's already an ice at the location */
                 ice = Instantiate(objToSpawn, iceLocation.position, Quaternion.identity);
+				iceSFX.Play();
         }
 
 

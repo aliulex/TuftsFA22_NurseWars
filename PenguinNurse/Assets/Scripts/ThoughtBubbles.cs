@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThoughtBubbles : MonoBehaviour
 {
     public GameObject[] needs;
+	public AudioSource task_doneSFX; // finished task sfx
     // Start is called before the first frame update
     private GameObject[] icons = new GameObject[3];
     public Sprite newSprite;
@@ -30,6 +31,7 @@ public class ThoughtBubbles : MonoBehaviour
         for (int i = 0; i < needs.Length; i++) {
             if (icons[i].tag == "needbed") {
                 icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+				task_doneSFX.Play();
             }
         }
     }
@@ -39,6 +41,7 @@ public class ThoughtBubbles : MonoBehaviour
         for (int i = 0; i < needs.Length; i++) {
             if (icons[i].tag == "needsaltine") {
                 icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+				task_doneSFX.Play();
             }
         }
     }
@@ -48,6 +51,7 @@ public class ThoughtBubbles : MonoBehaviour
         for (int i = 0; i < needs.Length; i++) {
             if (icons[i].tag == "needbandaid") {
                 icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+				task_doneSFX.Play();
             }
         }
     }
@@ -57,6 +61,7 @@ public class ThoughtBubbles : MonoBehaviour
         for (int i = 0; i < needs.Length; i++) {
             if (icons[i].tag == "needice") {
                 icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+				task_doneSFX.Play();
             }
         }
     }
