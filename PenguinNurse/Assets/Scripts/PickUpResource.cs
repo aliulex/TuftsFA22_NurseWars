@@ -21,29 +21,27 @@ public class PickUpResource : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.T)) {  /* Check for key input */
 
+
                         // if (babyPenguin.transform.position != holdSpot.position) {      /* Only be able to pick-up resources if there's no penguin onto off the nurse head. NOT WORKING */
 
                                 if (itemHolding) {  /* If player is currently holding item, drop the item */
-
 
 
                                         itemHolding.transform.position = transform.position + Direction;     /* Change the positon of the item so that when the item is drop, it dropped right infront of the player */
                                         itemHolding.transform.parent = null;   /* Get the item off the player head */
 
 
-                                        /********************** WHY IS THIS PART NOT WORKING */
-                                        // float distant_ice_from_baby_penguin = Vector3.Distance (babyPenguin.transform.position, itemHolding.transform.position);
-                                        // Console.Write(distant_ice_from_baby_penguin);
-                                        // if(distant_ice_from_baby_penguin <= 2) {
-                                        //         itemHolding.SetActive(false);
-                                        // }
-                                        /***********************/
+                                        /********************** WHY IS THIS PART NOT WORKING
+                                        float distant_ice_from_baby_penguin = Vector3.Distance (babyPenguin.transform.position, itemHolding.transform.position);
+                                        Debug.Log(distant_ice_from_baby_penguin);
+                                        if(distant_ice_from_baby_penguin <= 2) {
+                                                itemHolding.SetActive(false);
+                                        }
+                                        ***********************/
 
 
                                         if (itemHolding.GetComponent<Rigidbody2D>()) {
-
-
-                                        itemHolding.GetComponent<Rigidbody2D>().simulated = true;  /* Check to make sure that the object stop following the player */
+                                                itemHolding.GetComponent<Rigidbody2D>().simulated = true;  /* Check to make sure that the object stop following the player */
                                         }
 
 
@@ -75,5 +73,6 @@ public class PickUpResource : MonoBehaviour
                 }
                 
         }
+
 
 }
