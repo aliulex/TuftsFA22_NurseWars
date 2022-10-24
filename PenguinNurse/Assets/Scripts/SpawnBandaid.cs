@@ -27,7 +27,7 @@ public class SpawnBandaid : MonoBehaviour
                 float bandaidBlockLocation = Vector3.Distance (bandaid.transform.position, bandaidLocation.position);       /* Get the position between the spawned bandaid and the location where bandaid will depense */
 
                 /* If player is close enough to the bandaid machine */
-                if(distant_from_bandaidMachine <= 1.5) {
+                if(distant_from_bandaidMachine <= 2) {
 
                         /* If "P" is pressed and the location of a spawned bandaid is not at the spawn location. Essentially mean, only spawn bandaid when a button is press and when there's no bandaid at the spawn-bandaid location */
                         if(Input.GetKeyDown(KeyCode.P) && bandaidBlockLocation > 1) {

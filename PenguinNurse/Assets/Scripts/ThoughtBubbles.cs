@@ -33,4 +33,31 @@ public class ThoughtBubbles : MonoBehaviour
             }
         }
     }
+
+    void Eaten()
+    {
+        for (int i = 0; i < needs.Length; i++) {
+            if (icons[i].tag == "needsaltine") {
+                icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+            }
+        }
+    }
+
+    void Patched()
+    {
+        for (int i = 0; i < needs.Length; i++) {
+            if (icons[i].tag == "needbandaid") {
+                icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+            }
+        }
+    }
+
+    void Iced()
+    {
+        for (int i = 0; i < needs.Length; i++) {
+            if (icons[i].tag == "needice") {
+                icons[i].GetComponent<SpriteRenderer>().sprite = newSprite;
+            }
+        }
+    }
 }

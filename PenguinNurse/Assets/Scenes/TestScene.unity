@@ -2803,6 +2803,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 74f594168053f416491d5a43735957b6, type: 3}
+    - target: {fileID: 3162880472365058395, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
+      propertyPath: m_SortingOrder
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 5745050591040679017, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -2973,6 +2977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de9117f30f7dd442fb8e3ed4c3193ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bar: {fileID: 1691620748}
 --- !u!4 &1203448341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3579298976436055946, guid: 9f4f4001fb3f74ea592452ba38370b09, type: 3}
@@ -3355,6 +3360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be97ee15fa5534434b841924d9881196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bar: {fileID: 1691620748}
 --- !u!1 &1456945028 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5697907134467454000, guid: 39311603f8d054d5d97b269cc99e1ea9, type: 3}
@@ -3524,6 +3530,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2fc422deceab54c379259e95a2408a5e, type: 3}
+    - target: {fileID: 3162880472365058395, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
+      propertyPath: m_SortingOrder
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 5745050591040679017, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3946,6 +3956,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4e5881d6d7c30445fbb0c3c61d7bbf62, type: 3}
+    - target: {fileID: 3162880472365058395, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
+      propertyPath: m_SortingOrder
+      value: 95
+      objectReference: {fileID: 0}
     - target: {fileID: 5745050591040679017, guid: 46a6fc91e186c43f7ba14eadd850ce78, type: 3}
       propertyPath: m_RootOrder
       value: 15

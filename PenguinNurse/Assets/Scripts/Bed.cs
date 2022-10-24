@@ -35,7 +35,7 @@ public class Bed : MonoBehaviour
 
     IEnumerator DelaySleep() 
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         Destroy(progress);
         if (currentSleep == true) {
             gameObject.SendMessage("Slept");

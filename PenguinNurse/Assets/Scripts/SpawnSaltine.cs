@@ -27,7 +27,7 @@ public class SpawnSaltine : MonoBehaviour
                 float saltineBlockLocation = Vector3.Distance (saltine.transform.position, saltineLocation.position);       /* Get the position between the spawned saltine and the location where saltine will depense */
 
                 /* If player is close enough to the saltine machine */
-                if(distant_from_saltineMachine <= 1.5) {
+                if(distant_from_saltineMachine <= 2) {
 
                         /* If "P" is pressed and the location of a spawned saltine is not at the spawn location. Essentially mean, only spawn saltine when a button is press and when there's no saltine at the spawn-saltine location */
                         if(Input.GetKeyDown(KeyCode.P) && saltineBlockLocation > 1) {

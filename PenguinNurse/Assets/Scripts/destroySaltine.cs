@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class destroySaltine : MonoBehaviour
 {
+        public GameObject bar;
+        private GameObject progress;
         /* Function to destroy saltines after 2.5 second of colliding with baby penguin */
 
-        void OnTriggerStay2D(Collider2D other)
+        void OnTriggerEnter2D(Collider2D other)
         {
                 if (other.gameObject.tag == "patient")
                 {
-                        StartCoroutine(DelayDestroyingSaltines());                
+                        progress = Instantiate(bar, new Vector2(other.transform.position.x, other.transform.position.y - 0.5f), Quaternion.identity);
+                        StartCoroutine(DelayDestroyingSaltines(other));                
                 }
         }
 
-        IEnumerator DelayDestroyingSaltines(){
-                yield return new WaitForSeconds(2.5f);
+        void OnTriggerExit2D(Collider2D other)
+        {
+                if (other.gameObject.tag == "patient")
+                {
+                        Destroy(progress);
+                        StopCoroutine(DelayDestroyingSaltines(other));
+                }
+        }
+
+        IEnumerator DelayDestroyingSaltines(Collider2D other){
+                yield return new WaitForSeconds(5f);
+                other.SendMessage("Eaten");
+                Destroy(progress);
                 gameObject.SetActive(false);
         }
 }

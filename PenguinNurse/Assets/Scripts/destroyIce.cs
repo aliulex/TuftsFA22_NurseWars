@@ -9,6 +9,7 @@ public class destroyIce : MonoBehaviour
         {
                 if (other.gameObject.tag == "patient")
                 {
+                    other.SendMessage("Iced");
                     gameObject.SetActive(false);
                 }
         }
