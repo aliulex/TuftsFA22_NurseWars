@@ -3039,6 +3039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needs:
   - {fileID: 41036257}
+  - {fileID: 1562849907}
   task_doneSFX: {fileID: 1023597130}
   icons:
   - {fileID: 0}
@@ -3319,6 +3320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   needs:
   - {fileID: 1562849907}
+  - {fileID: 574544391}
   task_doneSFX: {fileID: 1066735989}
   icons:
   - {fileID: 0}
