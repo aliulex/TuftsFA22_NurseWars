@@ -11,6 +11,16 @@ public class PickUp : MonoBehaviour
     private GameObject itemHolding;     /* Having private means when we have it pick up, we store it in this variable. When we want to drop it, we can just access this variable again */ 
 
     public Vector3 Direction {get; set; }  /* Pick Up Logic: Need to know which direction the nurse penguin is facing. Get from movement scipt */
+    
+    public Sprite checkMark;
+    public GameObject exit;
+    public GameHandler gameHandlerObj;
+
+    void Start() {
+        if (GameObject.FindWithTag("GameHandler") != null) {
+            gameHandlerObj = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        }
+    }
 
     void Update()
     {
@@ -24,6 +34,8 @@ public class PickUp : MonoBehaviour
                 GameObject place = null;
                 bool canplacebed = false;
                 bool canplacestool = false;
+                bool canexit = false;
+                int checkCount = 0;
  
                 for (int i = 0; i < beds.Length; i++) {
                     if (Vector3.Distance(transform.position, beds[i].transform.position) <= 1.5) {
@@ -43,7 +55,25 @@ public class PickUp : MonoBehaviour
                     }
                 }
 
-                if (canplacebed) { /* If player is near a place (bed/stool), drop the item on the place */
+                if (Vector3.Distance(transform.position, exit.transform.position) <= 1.5) {
+                    for (int i = 0; i < itemHolding.GetComponent<ThoughtBubbles>().needs.Length; i++) {
+                        if (itemHolding.GetComponent<ThoughtBubbles>().icons[i].GetComponent<SpriteRenderer>().sprite == checkMark) {
+                            checkCount++;
+                        }
+                    }
+                    if (checkCount == itemHolding.GetComponent<ThoughtBubbles>().needs.Length) {
+                        canexit = true;
+                    }
+                }
+
+                if (canexit) {
+                    for (int i = 0; i < itemHolding.GetComponent<ThoughtBubbles>().needs.Length; i++) {
+                        itemHolding.GetComponent<ThoughtBubbles>().icons[i].GetComponent<Renderer>().enabled = false;
+                    }
+                    itemHolding.GetComponent<Bubble>().bubbleAbove.GetComponent<Renderer>().enabled = false;
+                    Destroy(itemHolding);
+                    gameHandlerObj.AddScore(1);
+                } else if (canplacebed) { /* If player is near a place (bed/stool), drop the item on the place */
                     itemHolding.transform.position = place.transform.position + new Vector3(0, (float)0.25, 0);
                     itemHolding.transform.parent = place.transform;
                 } else if (canplacestool) {

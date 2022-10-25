@@ -6,7 +6,7 @@ public class Bubble : MonoBehaviour
 {
     public GameObject bubble;
     // Start is called before the first frame update
-    private GameObject bubbleAbove;
+    public GameObject bubbleAbove;
     private float offset = 0.1f;
     void Start()
     {

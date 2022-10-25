@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameHandler : MonoBehaviour{
 
         public static int playerStat;
+        public GameObject scoreText;
+        private int playerScore = 0;
+        public GameObject timeText;
+        public GameObject gameOverText;
+        public int gameTime = 60;
+        public float gameTimer = 0f;
         //public GameObject textGameObject;
 
         //void Start () { UpdateScore (); }
@@ -30,6 +36,9 @@ public class GameHandler : MonoBehaviour{
 
         void Start() {
                 pauseMenu.SetActive(false);
+                UpdateScore();
+                gameOverText.SetActive(false);
+                UpdateTime();
         }
 
         void Update(){         //delete this quit functionality when a Pause Menu is added
@@ -37,6 +46,34 @@ public class GameHandler : MonoBehaviour{
                         // Application.Quit();
                         // QuitGame();
                         Pause();
+                }
+        }
+
+        public void AddScore(int points){
+                playerScore += points;
+                UpdateScore();
+        }
+
+        void UpdateScore(){
+                Text scoreTextB = scoreText.GetComponent<Text>();
+                scoreTextB.text = "" + playerScore;
+        }
+
+        public void UpdateTime(){
+                Text timeTextB = timeText.GetComponent<Text>();
+                timeTextB.text = "" + gameTime;
+        }
+
+        void FixedUpdate() {
+                gameTimer += 0.01f;
+                if (gameTimer >= 1f){
+                        gameTime -= 1;
+                        gameTimer = 0;
+                        UpdateTime();
+                }
+                if (gameTime <= 0){
+                        gameTime = 0;
+                        gameOverText.SetActive(true);
                 }
         }
 

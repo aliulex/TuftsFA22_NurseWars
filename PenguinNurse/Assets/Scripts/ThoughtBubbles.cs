@@ -7,7 +7,7 @@ public class ThoughtBubbles : MonoBehaviour
     public GameObject[] needs;
 	public AudioSource task_doneSFX; // finished task sfx
     // Start is called before the first frame update
-    private GameObject[] icons = new GameObject[3];
+    public GameObject[] icons = new GameObject[3];
     public Sprite newSprite;
     void Start()
     {
