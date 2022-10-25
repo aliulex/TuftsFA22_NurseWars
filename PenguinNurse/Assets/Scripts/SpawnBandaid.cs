@@ -30,7 +30,7 @@ public class SpawnBandaid : MonoBehaviour
                 if(distant_from_bandaidMachine <= 2) {
 
                         /* If "P" is pressed and the location of a spawned bandaid is not at the spawn location. Essentially mean, only spawn bandaid when a button is press and when there's no bandaid at the spawn-bandaid location */
-                        if(Input.GetKeyDown(KeyCode.P) && bandaidBlockLocation > 1) {
+                        if(Input.GetKeyDown(KeyCode.T) && bandaidBlockLocation > 1) {
                                 // StopCoroutine(DelayTreeAway());
                                 // StartCoroutine(DelayTreeAway());
                                 spawnOnPress();

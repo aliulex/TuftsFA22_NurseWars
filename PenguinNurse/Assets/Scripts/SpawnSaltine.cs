@@ -30,7 +30,7 @@ public class SpawnSaltine : MonoBehaviour
                 if(distant_from_saltineMachine <= 2) {
 
                         /* If "P" is pressed and the location of a spawned saltine is not at the spawn location. Essentially mean, only spawn saltine when a button is press and when there's no saltine at the spawn-saltine location */
-                        if(Input.GetKeyDown(KeyCode.P) && saltineBlockLocation > 1) {
+                        if(Input.GetKeyDown(KeyCode.T) && saltineBlockLocation > 1) {
                                 // StopCoroutine(DelayTreeAway());
                                 // StartCoroutine(DelayTreeAway());
                                 spawnOnPress();

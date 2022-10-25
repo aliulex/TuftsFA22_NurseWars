@@ -31,7 +31,7 @@ public class SpawnIce : MonoBehaviour
                 if(distant_from_iceMachine <= 2) {
 
                         /* If "P" is pressed and the location of a spawned ice is not at the spawn location. Essentially mean, only spawn ice when a button is press and when there's no ice at the spawn-ice location */
-                        if(Input.GetKeyDown(KeyCode.P) && iceBlockLocation > 1) {
+                        if(Input.GetKeyDown(KeyCode.T) && iceBlockLocation > 1) {
                                 StopCoroutine(DelayTreeAway());
                                 StartCoroutine(DelayTreeAway());
                         }

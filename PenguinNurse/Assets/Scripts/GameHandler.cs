@@ -67,14 +67,22 @@ public class GameHandler : MonoBehaviour{
         void FixedUpdate() {
                 gameTimer += 0.01f;
                 if (gameTimer >= 1f){
-                        gameTime -= 1;
+                        if (gameTime > 0) {
+                                gameTime -= 1;
+                        }
                         gameTimer = 0;
                         UpdateTime();
                 }
                 if (gameTime <= 0){
                         gameTime = 0;
                         gameOverText.SetActive(true);
+                        StartCoroutine(DelayGameOver());
                 }
+        }
+
+        IEnumerator DelayGameOver() {
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("MainMenu");
         }
 
         // public void UpdatePlayerStat(int amount){

@@ -19,7 +19,7 @@ public class PickUpResource : MonoBehaviour
         void Update()
         {
 
-                if (Input.GetKeyDown(KeyCode.T)) {  /* Check for key input */
+                if (Input.GetKeyDown(KeyCode.R)) {  /* Check for key input */
 
 
                         // if (babyPenguin.transform.position != holdSpot.position) {      /* Only be able to pick-up resources if there's no penguin onto off the nurse head. NOT WORKING */
