@@ -5768,7 +5768,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3060010373113764517, guid: 1103fd4ad524248c59ffa83e3fbc751a, type: 3}
       propertyPath: gameTime
-      value: 60
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 3060010373113764517, guid: 1103fd4ad524248c59ffa83e3fbc751a, type: 3}
       propertyPath: timeText
